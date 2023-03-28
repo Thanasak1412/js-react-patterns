@@ -1,11 +1,9 @@
 import { Listing } from "./Listing";
 import { ListingsGrid } from "./ListingsGrid";
-import useListings from "../hooks/useListings";
+import { useListingsContext } from "../contexts/ListingsProvider";
 
 export default function Listings() {
-  const listings = useListings();
-
-  if (!listings) return null;
+  const listings = useListingsContext();
 
   return (
     <ListingsGrid>
